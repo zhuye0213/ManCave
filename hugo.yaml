@@ -21,6 +21,24 @@ minify:
   disableXML: true
   minifyOutput: true
 
+menu:
+  main:
+    - identifier: search
+      name: 🔍搜索
+      url: search
+      weight: 10
+    - identifier: tech
+      name: 👨🏻‍💻技术
+      url: /posts/tech/
+      weight: 20
+    - identifier: tank
+      name: 🪸珊瑚
+      url: /posts/tank/
+      weight: 30
+    - identifier: blog
+      name: 🏖生活
+      url: /posts/blog/
+      weight: 40
 
 languages:
   zh-cn:
@@ -44,25 +62,23 @@ languages:
           - name: 🏖生活
             url: /posts/blog
       menu:
-          main:
-            - identifier: search
-              name: 🔍搜索
-              url: search
-              weight: 10
-            - identifier: tech
-              name: 👨🏻‍💻技术
-              url: /posts/tech/
-              weight: 20
-            - identifier: tank
-              name: 🪸珊瑚
-              url: /posts/tank/
-              weight: 30
-            - identifier: blog
-              name: 🏖生活
-              url: /posts/blog/
-              weight: 40
-      
-
+        main:
+          - identifier: search
+            name: 🔍搜索
+            url: search
+            weight: 10
+          - identifier: tech
+            name: 👨🏻‍💻技术
+            url: /posts/tech/
+            weight: 20
+          - identifier: tank
+            name: 🪸珊瑚
+            url: /posts/tank/
+            weight: 30
+          - identifier: blog
+            name: 🏖生活
+            url: /posts/blog/
+            weight: 40
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -102,11 +118,9 @@ params:
     favicon32x32: "<link / abs url>"
     apple_touch_icon: "<link / abs url>"
     safari_pinned_tab: "<link / abs url>"
-
-
-
+    
   label:
-    text: "🏠主页"
+    text: "🏠Jack Choo's Zone"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
@@ -137,8 +151,8 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
+    URL: "https://github.com/zhuye0213/ManCave/content"
+    Text: "建议" # edit text
     appendFilePath: true # to append file path to Edit link
 
   # for search
