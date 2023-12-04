@@ -1,7 +1,7 @@
 ﻿baseURL: https://example.org/
 languageCode: zh-cn
 title: Jack Choo's Zone
-theme: hugo-PaperMod-7.0
+theme: hugo-PaperMod
 paginate: 5
 
 enableRobotsTXT: true
@@ -85,7 +85,7 @@ params:
   title: Jack Choo's Zone
   description: "Jack Choo's Zone"
   keywords: [Blog, Portfolio, Reef,Tech]
-  author: Me
+  author: ["Jack Choo"]
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "2006-01-02 15:04:05"
