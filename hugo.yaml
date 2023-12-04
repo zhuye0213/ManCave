@@ -39,12 +39,25 @@ menu:
       name: 🏖生活
       url: /posts/blog/
       weight: 40
+    - name: 分类
+      url: categories/
+      weight: 50
+    - name: 标签
+      url: tags/
+      weight: 60
+    - name: 系列
+      url: series/
+      weight: 70
 
 languages:
   zh-cn:
     languageName: "chinese"
     # contentDir: content/english
     weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
     params:
       profileMode:
         enabled: true
@@ -79,6 +92,7 @@ languages:
             name: 🏖生活
             url: /posts/blog/
             weight: 40
+
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.

@@ -4,11 +4,14 @@ date: {{ .Date }} #创建时间
 lastmod: {{ .Date }} #更新时间
 author: ["Jack Choo"] #作者
 categories: 
-- 分类1
-- 分类2
+- 技术
+- 海缸
 tags: 
-- 标签1
-- 标签2
+- 建站
+- C井
+series: 
+- 建站
+- C井
 weight: # 输入1可以顶置文章，用来给文章展示排序，不填就默认按时间排序
 slug: ""
 draft: false # 是否为草稿
