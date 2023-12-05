@@ -1,4 +1,4 @@
-﻿baseURL: https://github.com/zhuye0213/MavCave
+﻿baseURL: https://github.com/zhuye0213/MavCave/
 languageCode: zh-cn
 title: Jack Choo's Zone
 theme: hugo-PaperMod
@@ -29,15 +29,15 @@ menu:
       weight: 10
     - identifier: tech
       name: 👨🏻‍💻技术
-      url: /posts/tech/
+      url: posts/tech/
       weight: 20
     - identifier: tank
       name: 🪸珊瑚
-      url: /posts/tank/
+      url: posts/tank/
       weight: 30
     - identifier: blog
       name: 🏖生活
-      url: /posts/blog/
+      url: posts/blog/
       weight: 40
     - name: 分类
       url: categories/
@@ -69,11 +69,11 @@ languages:
         imageHeight: 150
         buttons:
           - name: 👨🏻‍💻技术
-            url: /ManCave/posts/tech
+            url: posts/tech
           - name: 🪸珊瑚
-            url: /ManCave/posts/tank
+            url: posts/tank
           - name: 🏖生活
-            url: /ManCave/posts/blog
+            url: posts/blog
       menu:
         main:
           - identifier: search
@@ -149,7 +149,7 @@ params:
     - name: stackoverflow
       url: "https://stackoverflow.com"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/zhuye0213"
 
   analytics:
     google:
