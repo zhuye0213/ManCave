@@ -92,7 +92,10 @@ languages:
             name: 🏖生活
             url: /posts/blog/
             weight: 40
-
+      cover:
+        hidden: false # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+        hiddenInSingle: true # hide on single page
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -107,7 +110,7 @@ params:
   disableThemeToggle: false
   timeZone: "Asia/Shanghai"
   buildFuture: true
-
+  
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
@@ -162,7 +165,7 @@ params:
   cover:
     hidden: false # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+    hiddenInSingle: false # hide on single page
 
   # editPost:
   #   URL: "https://github.com/zhuye0213/ManCave/content"
