@@ -69,11 +69,11 @@ languages:
         imageHeight: 150
         buttons:
           - name: 👨🏻‍💻技术
-            url: /posts/tech
+            url: /MavCave/posts/tech
           - name: 🪸珊瑚
-            url: /posts/tank
+            url: /MavCave/posts/tank
           - name: 🏖生活
-            url: /posts/blog
+            url: /MavCave/posts/blog
       menu:
         main:
           - identifier: search
