@@ -96,8 +96,8 @@ languages:
             weight: 40
       cover:
         hidden: false # hide everywhere but not in structured data
-        hiddenInList: true # hide on list pages and home
-        hiddenInSingle: true # hide on single page
+        hiddenInList: false # hide on list pages and home
+        hiddenInSingle: false # hide on single page
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -125,7 +125,7 @@ params:
   disableScrollToTop: false
   comments: false
   hidemeta: false
-  hideSummary: false
+  hideSummary: true
   showtoc: false
   tocopen: false
 
@@ -159,11 +159,6 @@ params:
       SiteVerificationTag: "XYZabc"
     yandex:
       SiteVerificationTag: "XYZabc"
-
-  cover:
-    hidden: false # hide everywhere but not in structured data
-    hiddenInList: false # hide on list pages and home
-    hiddenInSingle: false # hide on single page
 
   editPost:
     URL: "https://github.com/zhuye0213/ManCave/blob/main/content"

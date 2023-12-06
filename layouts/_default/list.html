@@ -72,6 +72,9 @@
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h2>
   </header>
+    <div class="entry-content">
+      <p>{{- .Description }}</p>
+  </div>
   {{- if (ne (.Param "hideSummary") true) }}
   <div class="entry-content">
     <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>

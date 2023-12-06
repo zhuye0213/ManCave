@@ -3,6 +3,7 @@ title: "{{ replace .Name "-" " " | title }}" #标题
 date: {{ .Date }} #创建时间
 lastmod: {{ .Date }} #更新时间
 author: ["Jack Choo"] #作者
+description: "描述"
 categories: 
 - 技术
 - 海缸
@@ -23,7 +24,6 @@ disableShare: true # 底部不显示分享栏
 showbreadcrumbs: true #顶部显示当前路径
 cover:
     image: "" #图片路径
-    caption: "" #图片底部描述
-    caption: "真相在此" #图片底部描述
-    alt: "真相"
+    caption: "真相"
+    alt: "图片走丢了"
 ---
