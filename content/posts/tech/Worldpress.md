@@ -24,11 +24,12 @@ hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
 disableShare: true # 底部不显示分享栏
 showbreadcrumbs: true #顶部显示当前路径
 cover:
-    image: "https://oss.rgsc.com.cn:29000/image/blog/%E6%88%91%E4%BB%AC%E5%81%9A%E4%BA%8B%E5%B0%B1%E6%98%AF%E8%BF%99%E6%A0%B7.gif" #图片路径
-    caption: "真相在此" #图片底部描述
-    alt: "真相"
-    relative: false
+  image: "https://oss.rgsc.com.cn:29000/image/blog/%E6%88%91%E4%BB%AC%E5%81%9A%E4%BA%8B%E5%B0%B1%E6%98%AF%E8%BF%99%E6%A0%B7.gif"
+  caption: "真相在此"
+  alt: "真相"
+  relative: false
 ---
+![属性文本](https://oss.rgsc.com.cn:29000/image/blog/%E6%88%91%E4%BB%AC%E5%81%9A%E4%BA%8B%E5%B0%B1%E6%98%AF%E8%BF%99%E6%A0%B7.gif)
 ## MYSQL
 安装MySql5.7,并配置uff8字符集
 安装完成后创建数据库wordpress

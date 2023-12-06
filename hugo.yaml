@@ -53,12 +53,14 @@ languages:
   zh-cn:
     languageName: "chinese"
     # contentDir: content/english
-    weight: 1
+    weight: 1    
+    hasCJKLanguage : true #统计汉字字数
     taxonomies:
       category: categories
       tag: tags
       series: series
     params:
+      reading_speed: 20
       profileMode:
         enabled: true
         title: 胸口碎大石
@@ -160,13 +162,13 @@ params:
 
   cover:
     hidden: false # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
+    hiddenInList: false # hide on list pages and home
     hiddenInSingle: false # hide on single page
 
-  # editPost:
-  #   URL: "https://github.com/zhuye0213/ManCave/content"
-  #   Text: "建议" # edit text
-  #   appendFilePath: true # to append file path to Edit link
+  editPost:
+    URL: "https://github.com/zhuye0213/ManCave/blob/main/content"
+    Text: "编辑" # edit text
+    appendFilePath: true # to append file path to Edit link
 
   # for search
   # https://fusejs.io/api/options.html
