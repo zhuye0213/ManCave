@@ -28,15 +28,15 @@ menu:
       url: search
       weight: 10
     - identifier: tech
-      name: 👨🏻‍💻技术
+      name: 技术
       url: posts/tech/
       weight: 20
     - identifier: tank
-      name: 🪸珊瑚
+      name: 珊瑚
       url: posts/tank/
       weight: 30
     - identifier: blog
-      name: 🏖生活
+      name: 生活
       url: posts/blog/
       weight: 40
     - name: 分类
@@ -70,11 +70,11 @@ languages:
         imageWidth: 150
         imageHeight: 150
         buttons:
-          - name: 👨🏻‍💻技术
+          - name: 技术
             url: posts/tech
-          - name: 🪸珊瑚
+          - name: 珊瑚
             url: posts/tank
-          - name: 🏖生活
+          - name: 生活
             url: posts/blog
       menu:
         main:
@@ -83,15 +83,15 @@ languages:
             url: search
             weight: 10
           - identifier: tech
-            name: 👨🏻‍💻技术
+            name: 技术
             url: /posts/tech/
             weight: 20
           - identifier: tank
-            name: 🪸珊瑚
+            name: 珊瑚
             url: /posts/tank/
             weight: 30
           - identifier: blog
-            name: 🏖生活
+            name: 生活
             url: /posts/blog/
             weight: 40
       cover:
