@@ -66,7 +66,18 @@ vi /etc/ssh/sshd_config
 ```
 systemctl restart sshd
 ```
-## 3 真相
+## 3 ssh-keygen工具参考（此小节以后完善）
+~~~
+#生成秘钥(注意两个单引号)，默认生成2048位的密钥，如果需要4096需要修改参数
+$ ssh-keygen -t rsa -P ''
+-P表示密码，-P '' 就表示空密码，也可以不用-P参数，这样就要三车回车，用-P就一次回车。
+该命令将在/root/.ssh目录下面产生一对密钥id_rsa和id_rsa.pub。
+以下是服务器之间免密登录，服务器需要保存私钥，如果用于远程登录 可以将私钥剪切走
+$ scp /home/jack/.ssh/id_rsa.pub root@113.209.211.195:/root/myfiles
+将公钥追加到服务器authorized_keys
+$  cat /root/myfiles/id_rsa.pub >> /root/.ssh/authorized_keys
+~~~
+## 4 真相
 ![图片迷路了](https://oss.rgsc.com.cn:29000/image/blog/xshell-public-key-login.png)
 
 
