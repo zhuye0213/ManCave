@@ -22,7 +22,7 @@ cover:
     caption: "封面图"
     alt: "图片迷路了"
 ---
-## 1 生成密钥对
+## 1 xshell生成密钥对
 我这里使用的是xshell，也可以使用linux自带的程序
 ### 1.1 工具
 ![图片迷路了](https://oss.rgsc.com.cn:29000/image/blog/xshell-rsa-menu.png)
@@ -37,16 +37,42 @@ cover:
 ![图片迷路了](https://oss.rgsc.com.cn:29000/image/blog/xshell-rsa-build4.png)
 ### 1.6 私钥
 用户密钥管理里面可以导出私钥，需要输入刚才的设置的密码
-## 2 CentOS配置公钥
-### 2.1 拷贝公钥到authorized_keys文件
+## 2 命令生成
+### 2.1 生成秘钥
+注意两个单引号，也可以不用-P参数，这样就要三车回车，用-P就一次回车
+~~~
+#生成秘钥(注意两个单引号)，默认生成2048位的密钥
+ssh-keygen -m PEM -t rsa -b 4096 -P ''
+~~~
+该命令将在/{user}/.ssh目录下面产生一对密钥
+- 公钥 id_rsa.pub
+- 私钥 id_rsa
+## 3 配置公钥
+### 3.1 拷贝公钥到authorized_keys文件
 将公钥文件上传到服务器，然后执行命令，authorized_keys文件不存在就创建
 文件权限配置为600
+.ssh 文件权限配置为700
 ```
-cat ../id_rsa_4096.pub  >/root/.ssh/authorized_keys
+#进入当前用户.ssh
+cd ~/.ssh/
+cat id_rsa.pub  >authorized_keys
+```
+### 3.2设置权限
+- .ssh 700
+- .ssh/authorized_keys 600
+ 
+**11**
+```
+chmod 600 ~/.sshauthorized_keys
+chmod 700 ~/.ssh
+...
+drwx------  .ssh
+...
+-rw-------  authorized_keys
+...
 
-chmod 600 authorized_keys
 ```
-### 2.2 修改ssh配置
+### 3.2 修改ssh配置
 ```
 vi /etc/ssh/sshd_config
 ```
@@ -66,17 +92,6 @@ vi /etc/ssh/sshd_config
 ```
 systemctl restart sshd
 ```
-## 3 ssh-keygen工具参考（此小节以后完善）
-~~~
-#生成秘钥(注意两个单引号)，默认生成2048位的密钥，如果需要4096需要修改参数
-$ ssh-keygen -t rsa -P ''
--P表示密码，-P '' 就表示空密码，也可以不用-P参数，这样就要三车回车，用-P就一次回车。
-该命令将在/root/.ssh目录下面产生一对密钥id_rsa和id_rsa.pub。
-以下是服务器之间免密登录，服务器需要保存私钥，如果用于远程登录 可以将私钥剪切走
-$ scp /home/jack/.ssh/id_rsa.pub root@113.209.211.195:/root/myfiles
-将公钥追加到服务器authorized_keys
-$  cat /root/myfiles/id_rsa.pub >> /root/.ssh/authorized_keys
-~~~
 ## 4 真相
 ![图片迷路了](https://oss.rgsc.com.cn:29000/image/blog/xshell-public-key-login.png)
 
