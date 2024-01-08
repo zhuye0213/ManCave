@@ -244,7 +244,8 @@ gpg -a -o file-name.key --[export|export-secret-key|export-secret-subkey] keyId
 - --export-key 导出公钥
 - --export-secret-key 导出私钥
 - --export-secret-subkey 导出全部子私钥
-2.1.4 导出吊销证书
+
+#### 2.1.4 导出吊销证书
 ~~~
 gpg --gen-revoke keyId
 ~~~
