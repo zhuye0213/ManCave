@@ -245,6 +245,25 @@ gpg -a -o file-name.key --[export|export-secret-key|export-secret-subkey] keyId
 - --export-secret-key 导出私钥
 - --export-secret-subkey 导出全部子私钥
 
+导出单个子密钥(gpg4win可以直接导出 用于验证的 openssh公钥 和 子私钥)
+~~~
+gpg --list-secret-keys --keyid-format=long
+~~~
+~~~
+[keyboxd]
+---------
+sec#  rsa4096/xxxxxxxxxxxxxxxx 2024-01-08 [C]
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+uid                 [ultimate] xxxxx (xxxxxxxxxxxxx) <xxxxxxxxx@xxxxx.com>
+ssb   ed25519/xxxxxxxxxxxxxxxx 2024-01-08 [S] [expires: 2025-01-01]
+ssb   ed25519/xxxxxxxxxxxxxxxx 2024-01-08 [A] [expires: 2025-01-01]
+ssb   cv25519/xxxxxxxxxxxxxxxx 2024-01-08 [E] [expires: 2025-01-01]
+~~~
+子密钥Keygrip后加叹号
+~~~
+gpg --output secret-subkeys --export-secret-subkeys SUBKEYID! [SUBKEYID! ..]
+~~~
+
 #### 2.1.4 导出吊销证书
 ~~~
 gpg --gen-revoke keyId
