@@ -30,11 +30,13 @@ cover:
 
 翻译: 争辩说你不在乎隐私权 因为你没有什么可隐瞒的 说你不在乎言论自由，因为你有 没什么好说的。——爱德华·斯诺登
 ### 1.2 一些传送门
-GnuPG官方[传送门](https://gnupg.org/)
+GnuPG官方[传送门1](https://gnupg.org/)
 
-Protecting Code Integrity with PGP(老外写的文章)[传送门](https://www.linux.com/news/protecting-code-integrity-pgp-part-1-basic-pgp-concepts-and-tools/)
+Protecting Code Integrity with PGP(老外写的文章)[传送门2](https://www.linux.com/news/protecting-code-integrity-pgp-part-1-basic-pgp-concepts-and-tools/)
 
-debian subkey(debian系统 关于如何使用子密钥)[传送门](https://wiki.debian.org/Subkeys)
+debian subkey(debian系统 关于如何使用子密钥)[传送门3](https://wiki.debian.org/Subkeys)
+
+The GNU Privacy Handbook(一个英文的手册)[传送门4](https://www.gnupg.org/gph/en/manual/book1.html)
 
 ### 1.3 GPG是什么
 机器翻译自官网
@@ -49,5 +51,235 @@ GnuPG 是 OpenPGP 标准的完整且免费的实现，作为 由 *[RFC4880](http
 - 系统:win11
 - 软件:[gpg4win](https://www.gpg4win.org/)
 ## 2. 开始
+### 2.1 生成密钥
+#### 2.1.1 生成主密钥
+~~~
+gpg --expert --full-generate-key
+~~~
+- --expert 专家模式，更多的配置方法
+- --full-generate-key 交互式设置
+~~~
+D:\gpg>gpg --expert --full-generate-key
+gpg (GnuPG) 2.4.3; Copyright (C) 2023 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+   (9) ECC (sign and encrypt) *default*
+  (10) ECC (sign only)
+  (11) ECC (set your own capabilities)
+  (13) Existing key
+  (14) Existing key from card
+Your selection? 8
+
+Possible actions for this RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? S
+
+Possible actions for this RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? E
+
+Possible actions for this RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? Q
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) Y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: xxxxx
+Email address: xxxxxx@xxx.com
+Comment: xxxxxxxxxxxxx
+You selected this USER-ID:
+    "xxxxx (xxxx) <xxxxxx@xxx.com>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+public and secret key created and signed.
+
+pub   rsa4096 2024-01-08 [C]
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+uid                      xxxx (xxxxxx) <xxxxxx@xxx.com>
+~~~
+#### 2.1.2 生成子密钥
 
 
+查询key ID
+~~~
+gpg -k
+~~~
+~~~
+[keyboxd]
+---------
+pub   rsa4096 2024-01-08 [C]
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx #这里是 key id
+uid           [ultimate] xxxxx (xxxxxxxx) <xxxxxxx@xxxxx.com>
+~~~
+编辑密钥，依次添加[只签名][只加密][只验证]子密钥
+
+~~~
+gpg --expert --edit-key keyid
+~~~
+~~~
+gpg> addkey
+Please select what kind of key you want:
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (5) Elgamal (encrypt only)
+   (6) RSA (encrypt only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+  (10) ECC (sign only)
+  (11) ECC (set your own capabilities)
+  (12) ECC (encrypt only)
+  (13) Existing key
+  (14) Existing key from card
+Your selection? 11
+
+Possible actions for this ECC key: Sign Authenticate
+Current allowed actions: Sign
+
+   (S) Toggle the sign capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? Q
+Please select which elliptic curve you want:
+   (1) Curve 25519 *default*
+   (2) Curve 448
+   (3) NIST P-256
+   (4) NIST P-384
+   (5) NIST P-521
+   (6) Brainpool P-256
+   (7) Brainpool P-384
+   (8) Brainpool P-512
+   (9) secp256k1
+Your selection? 1
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 5Y
+Key expires at 2029/1/6 13:35:11 �й���׼ʱ��
+Is this correct? (y/N) Y
+Really create? (y/N) Y
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+~~~
+添加完成后保存
+~~~
+gpg> save
+~~~
+查询
+~~~
+gpg --list-secret-key
+~~~
+其中
+- C 证书 (主密钥特有 只能有一个)
+- E 加密
+- S 签名
+- A 认证
+
+椭圆曲线ed25519只能用于签名，加密需要用cv25519，具体请搜索椭圆曲线加密
+~~~
+[keyboxd]
+---------
+sec   rsa4096 2024-01-06 [C]
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+uid           [ultimate] xxxxxx <xxxxxxx@xxxxx.com>
+ssb   cv25519 2024-01-05 [E] [expires: 2025-01-06]
+ssb   ed25519 2024-01-05 [S] [expires: 2025-01-06]
+ssb   ed25519 2024-01-05 [A] [expires: 2025-01-06]
+~~~
+#### 2.1.3 导出密钥
+~~~
+gpg -a -o file-name.key --[export|export-secret-key|export-secret-subkey] keyId
+~~~
+- -a 为 –armor 的简写，表示密钥以 ASCII 的形式输出，默认以二进制的形式输出；
+- -o 为 –output 的简写，指定写入的文件，不加导出到屏幕输出
+
+下面参数任选其一
+- --export-key 导出公钥
+- --export-secret-key 导出私钥
+- --export-secret-subkey 导出全部子私钥
+2.1.4 导出吊销证书
+~~~
+gpg --gen-revoke keyId
+~~~
+#### 2.1.5 备份私钥，删除私钥
+
+**以下三个步骤很重要 !!!**
+1. 主私钥打印到纸上
+2. 吊销证书拷贝到别的地方放好
+3. 删除主私钥（平时只使用子私钥）
+
+主要私钥只有以前情况使用
+You will need to use the primary keys only in exceptional circumstances, namely when you want to modify your own or someone else's key. More specifically, you need the primary private key:
+
+- when you sign someone else's key or revoke an existing signature,
+- when you add a new UID or mark an existing UID as primary,
+- when you create a new subkey,
+- when you revoke an existing UID or subkey,
+- when you change the preferences (e.g., with setpref) on a UID,
+- when you change the expiration date on your primary key or any of its subkey, or
+- when you revoke or generate a revocation certificate for the complete key.
+
+(Because each of these operation is done by adding a new self- or revocation signatures from the private primary key.)
+详见1.2 [传送门3]
+
+翻译
+只有在特殊情况下，即当您想要修改自己或其他人的密钥时，才需要使用主密钥。更具体地说，您需要主私钥：
+
+- 当您对其他人的密钥进行签名或撤销现有签名时，
+- 当您添加新 UID 或将现有 UID 标记为主要 UID 时，
+- 创建新的子项时，
+- 当您撤销现有 UID 或子项时，
+- 当您更改 UID 上的首选项（例如，使用 setpref）时，
+- 当您更改主密钥或其任何子项的到期日期时，或者
+- 当您吊销或生成完整密钥的吊销证书时。
+
+（因为这些操作中的每一个都是通过从私钥添加新的自签名或吊销签名来完成的。
+#### 2.1.6 其它
+用gpg4win很多操作有界面。。。。
