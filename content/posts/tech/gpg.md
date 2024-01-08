@@ -281,5 +281,23 @@ You will need to use the primary keys only in exceptional circumstances, namely 
 - 当您吊销或生成完整密钥的吊销证书时。
 
 （因为这些操作中的每一个都是通过从私钥添加新的自签名或吊销签名来完成的。
-#### 2.1.6 其它
+#### 2.1.6 密钥真相
+~~~
+gpg --list-secret-key
+~~~
+注意sec后面的井号，标识主私钥不在这台电脑上
+~~~
+[keyboxd]
+---------
+sec#  rsa4096 2024-01-02 [C]
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+uid           [ultimate] xxxxxx (xxxxxxxx) <xxxxxxxxxx@xxxxx.com>
+ssb   ed25519 2020-01-02 [S] [expires: 2020-01-06]
+ssb   ed25519 2020-01-02 [A] [expires: 2020-01-06]
+ssb   cv25519 2020-01-02 [E] [expires: 2020-01-06]
+~~~
+![图片迷路了](https://oss.rgsc.com.cn:29000/image/blog/pgp-sub-keys.png)
+
+
+
 用gpg4win很多操作有界面。。。。
