@@ -301,7 +301,9 @@ ssb   cv25519 2020-01-02 [E] [expires: 2020-01-06]
 用gpg4win很多操作有界面。。。。
 
 ## 3 我的公钥
-[点我下载]( https://zhuye0213.github.io/ManCave/gpg-public-key.asc)
+指纹:B1F76745CAA58A450DECA7B4F61D3BDF67A4142D
+
+[下载公钥文件]( https://zhuye0213.github.io/ManCave/gpg-public-key.asc)
 ~~~
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
