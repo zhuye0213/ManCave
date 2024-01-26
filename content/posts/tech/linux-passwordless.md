@@ -58,18 +58,11 @@ cd ~/.ssh/
 cat id_rsa.pub  >authorized_keys
 ```
 ### 3.2设置权限
-- .ssh 700
+- .ssh 700(用ssh-keygen命令胜场 .ssh 目录，自带权限)
 - .ssh/authorized_keys 600
  
-**11**
 ```
-chmod 600 ~/.sshauthorized_keys
-chmod 700 ~/.ssh
-...
-drwx------  .ssh
-...
--rw-------  authorized_keys
-...
+chmod 600 ~/.ssh/authorized_keys
 
 ```
 ### 3.2 修改ssh配置
