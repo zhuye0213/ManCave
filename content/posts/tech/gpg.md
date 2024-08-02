@@ -272,8 +272,20 @@ gpg --gen-revoke keyId
 
 **以下三个步骤很重要 !!!**
 1. 主私钥打印到纸上
+
+
 2. 吊销证书拷贝到别的地方放好
+
+
 3. 删除主私钥（平时只使用子私钥）
+
+    ~~~
+    gpg -K --with-keygrip
+    ~~~
+    找到主密钥的 keygrip ，记住。
+
+    在 ~/.gnupg/private-keys-v1.d 下删除对应的主密钥文件。
+
 
 主要私钥只有以前情况使用
 You will need to use the primary keys only in exceptional circumstances, namely when you want to modify your own or someone else's key. More specifically, you need the primary private key:
@@ -287,7 +299,7 @@ You will need to use the primary keys only in exceptional circumstances, namely 
 - when you revoke or generate a revocation certificate for the complete key.
 
 (Because each of these operation is done by adding a new self- or revocation signatures from the private primary key.)
-详见1.2 [传送门3]
+详见1.2 [传送门3](https://wiki.debian.org/Subkeys)
 
 翻译
 只有在特殊情况下，即当您想要修改自己或其他人的密钥时，才需要使用主密钥。更具体地说，您需要主私钥：
