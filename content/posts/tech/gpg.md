@@ -18,7 +18,7 @@ hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
 disableShare: true # 底部不显示分享栏
 showbreadcrumbs: true #顶部显示当前路径
 cover:
-    image: "https://oss.rgsc.com.cn:29000/image/blog/oldlock.jpg" #图片路径
+    image: "./images/oldlock.jpg" #图片路径
     caption: "封面图"
     alt: "图片迷路了"
 
@@ -328,7 +328,7 @@ ssb   ed25519 2020-01-02 [S] [expires: 2020-01-06]
 ssb   ed25519 2020-01-02 [A] [expires: 2020-01-06]
 ssb   cv25519 2020-01-02 [E] [expires: 2020-01-06]
 ~~~
-![图片迷路了](https://oss.rgsc.com.cn:29000/image/blog/pgp-sub-keys.png)
+![图片迷路了](./images/pgp-sub-keys.png)
 
 用gpg4win很多操作有界面。。。。
 

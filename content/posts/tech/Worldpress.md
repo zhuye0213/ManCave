@@ -25,7 +25,7 @@ hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
 disableShare: true # 底部不显示分享栏
 showbreadcrumbs: true #顶部显示当前路径
 cover:
-  image: "https://oss.rgsc.com.cn:29000/image/blog/wordpress.jpg"
+  image: "./images/wordpress.jpg"
   caption: "封面图"
   alt: "图片迷路了"
   relative: false

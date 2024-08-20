@@ -19,7 +19,7 @@ hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
 disableShare: true # 底部不显示分享栏
 showbreadcrumbs: true #顶部显示当前路径
 cover:
-    image: "https://oss.rgsc.com.cn:29000/image/blog/k3s-rancher.png" #图片路径
+    image: "./images/k3s-rancher.png" #图片路径
     caption: "封面图"
     alt: "图片迷路了"
 ---
@@ -67,6 +67,6 @@ spec:
 kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
 ~~~
 ## 真相
-![图片迷路了](https://oss.rgsc.com.cn:29000/image/blog/kubernetes-dashboard-main-page.png)
+![图片迷路了](./images/kubernetes-dashboard-main-page.png)
 
 委婉待续~

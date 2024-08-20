@@ -18,7 +18,7 @@ draft: false # 是否为草稿
 disableShare: true # 底部不显示分享栏
 #showbreadcrumbs: true #顶部显示当前路径
 cover:
-    image: "https://oss.rgsc.com.cn:29000/image/blog/hugo.png" #图片路径
+    image: "./images/hugo.png" #图片路径
     caption: "封面图"
     alt: "图片迷路了"
 ---
