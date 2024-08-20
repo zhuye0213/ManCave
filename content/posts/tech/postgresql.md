@@ -57,9 +57,13 @@ systemctl enable postgresql-16
 ~~~
 systemctl start postgresql-16
 ~~~
-## 2.6 配置防火墙
+### 2.6 防火墙
 
 开放5432端口
+~~~
+firewall-cmd --zone=public --add-port=5432/tcp --permanent
+firewall-cmd --reload
+~~~
 
 ## 3. 配置
 
@@ -108,7 +112,7 @@ systemctl restart postgresql-16
 ### 3.3 配置 *pg_stat_statements* 扩展
 
 默认路径 */var/lib/pgsql/16/data/postgresql.conf*
-#### 3.3.1 配置*postgresql.conf*
+#### 3.3.1 配置 *postgresql.conf*
 ~~~
 #需要重启
 shared_preload_libraries = 'pg_stat_statements'

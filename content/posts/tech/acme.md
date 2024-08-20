@@ -81,9 +81,10 @@ export Ali_Secret="xxxxxxxxxxxxxxxxxxx"
 
 ## 5. 自动续签
 
-### 5.1 acme会加入定时任务，每60天自动续签，不需要手动续签
+### 5.1 定时任务
+acme会加入定时任务，每60天自动续签，不需要手动续签
 ~~~
-[root@proxy2 .acme.sh]# crontab -l
+[root@host .acme.sh]# crontab -l
 
 9 18 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
 ~~~
