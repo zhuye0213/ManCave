@@ -328,7 +328,7 @@ ssb   ed25519 2020-01-02 [S] [expires: 2020-01-06]
 ssb   ed25519 2020-01-02 [A] [expires: 2020-01-06]
 ssb   cv25519 2020-01-02 [E] [expires: 2020-01-06]
 ~~~
-![图片迷路了](./images/pgp-sub-keys.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/pgp-sub-keys.png)
 
 用gpg4win很多操作有界面。。。。
 

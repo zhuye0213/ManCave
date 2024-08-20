@@ -67,6 +67,6 @@ spec:
 kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
 ~~~
 ## 真相
-![图片迷路了](./images/kubernetes-dashboard-main-page.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/kubernetes-dashboard-main-page.png)
 
 委婉待续~

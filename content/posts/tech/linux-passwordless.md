@@ -25,16 +25,16 @@ cover:
 ## 1 xshell生成密钥对
 我这里使用的是xshell，也可以使用linux自带的程序
 ### 1.1 工具
-![图片迷路了](./images/xshell-rsa-menu.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/xshell-rsa-menu.png)
 ### 1.2 设置
 类型rsa，密钥长度4096
-![图片迷路了](./images/xshell-rsa-build1.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/xshell-rsa-build1.png)
 ### 1.3 生成中
-![图片迷路了](./images/xshell-rsa-build2.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/xshell-rsa-build2.png)
 ### 1.4 获取私钥的密码
-![图片迷路了](./images/xshell-rsa-build3.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/xshell-rsa-build3.png)
 ### 1.5 公钥
-![图片迷路了](./images/xshell-rsa-build4.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/xshell-rsa-build4.png)
 ### 1.6 私钥
 用户密钥管理里面可以导出私钥，需要输入刚才的设置的密码
 ## 2 命令生成
@@ -86,6 +86,6 @@ vi /etc/ssh/sshd_config
 systemctl restart sshd
 ```
 ## 4 真相
-![图片迷路了](./images/xshell-public-key-login.png)
+![图片迷路了](https://zhuye0213.github.io/ManCave/images/xshell-public-key-login.png)
 
 
